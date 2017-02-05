@@ -1,0 +1,74 @@
+header .brand-logo {
+    margin: 0 0 0 20px;
+}
+
+header #cart-dropdown-list {
+    width: 300px;
+}
+
+header li ul#cart-dropdown-list {
+    transition: 0.2s all;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+header li:hover ul#cart-dropdown-list {
+    display: block;
+    opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+
+product-add-to-cart .row,
+product-add-to-cart input[type="text"] {
+    margin: 0;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.card.small {
+    height: 330px;
+}
+
+.card.small .card-content {
+    display: flex;
+    height: 250px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card.small .card-content .product-price {
+    align-self: flex-end;
+}
+
+.checkout__no-data {
+    margin: 3em;
+    text-align: center;
+    color: #ccc;
+    font-size: 1.5em;
+    font-weight: 100;
+    font-style: italic;
+}
+
+.order-summary {
+    margin-top: 2em;
+}
+
+.order-summary__total {
+    text-align: right;
+}
+
+.order-summary__pay-btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2em;
+}
+
+.footer {
+    color: #ccc;
+}
