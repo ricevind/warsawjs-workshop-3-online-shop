@@ -8,13 +8,30 @@
 (function() {
   'use strict';
 
+  class ProductsController {
+      $onInit() {
+          this.query = "pan";
+          console.log(this.query)
+      }
+
+      queryChange($event) {
+         this.query = $event.query;
+         console.log(this.query)
+      }
+  }
+
   angular
     .module('shop')
     .component('products', {
-      template: `<products-list class="row">
+      template: `
+            <product-search query="ctrl.query"
+                            on-query-change="ctrl.queryChange($event)">
+            </product-search>
+            <products-list class="row" query="ctrl.query">
               <div class="progress">
                   <div class="indeterminate"></div>
               </div>
-          </products-list>`
+          </products-list>`,
+    controller: ProductsController
     })
 })();

@@ -12,7 +12,10 @@
     }
 
     $onInit() {
-      let productsPromise = this.productsService.get();
+      let productsPromise = this.productsService.get({
+        page:'',
+        name: this.query
+      });
       productsPromise.then((data) => {this.products = data.data});
     }
 
@@ -21,6 +24,9 @@
   angular
     .module('shop')
     .component('productsList', {
+      bindings: {
+        query: '<'
+      },
       template: `
                 <form class="col s12">
                   <div class="row">
