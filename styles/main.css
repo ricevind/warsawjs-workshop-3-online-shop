@@ -72,3 +72,7 @@ product-add-to-cart input[type="text"] {
 .footer {
     color: #ccc;
 }
+
+.pagination a {
+    cursor: pointer;
+}

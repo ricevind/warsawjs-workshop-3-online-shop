@@ -10,13 +10,15 @@
 
   class ProductsController {
       $onInit() {
-          this.query = "pan";
-          console.log(this.query)
-      }
+        }
 
       queryChange($event) {
          this.query = $event.query;
-         console.log(this.query)
+      }
+
+      pageSelect($event) {
+        this.page = $event.page;
+        console.log('product', this.page)
       }
   }
 
@@ -24,10 +26,10 @@
     .module('shop')
     .component('products', {
       template: `
-            <product-search query="ctrl.query"
-                            on-query-change="ctrl.queryChange($event)">
+            <product-search query="$ctrl.query"
+                            on-query-change="$ctrl.queryChange($event)">
             </product-search>
-            <products-list class="row" query="ctrl.query">
+            <products-list class="row" query="$ctrl.query" on-page-select="$ctrl.pageSelect($event)">
               <div class="progress">
                   <div class="indeterminate"></div>
               </div>

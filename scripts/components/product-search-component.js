@@ -6,13 +6,15 @@
         }
 
         $onInit() {
-            console.log(this.query)
         }
     
         onChange() {
         // set url to proper query
-            console.log(this)
-            this.onQueryChange()
+            this.onQueryChange({
+              $event:{
+                query:this.query
+              }
+            })
         }
     }
 
@@ -46,4 +48,4 @@
                     `
         });
 
-}())    
+}());
