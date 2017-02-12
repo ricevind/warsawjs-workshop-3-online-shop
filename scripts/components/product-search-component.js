@@ -1,13 +1,6 @@
 (function(){
     'use strict';
     class ProductSearch {
-        constructor() {
-
-        }
-
-        $onInit() {
-        }
-    
         onChange() {
         // set url to proper query
             this.onQueryChange({
@@ -22,8 +15,7 @@
         .module('shop')
         .component('productSearch', {
             bindings: {
-                onQueryChange:'&',
-                query:'<'
+                onQueryChange:'&'
             },
             controller: ProductSearch,
             template: `
