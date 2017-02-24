@@ -1,8 +1,14 @@
 (function(){
     'use strict';
+
     class ProductSearch {
+
+        constructor($state) {
+            this.$state = $state;
+        }
+
         onChange() {
-        // set url to proper query
+            this.$state.go('products',{'query': this.query}, {notify:false});
             this.onQueryChange({
               $event:{
                 query:this.query

@@ -9,13 +9,15 @@
   'use strict';
 
   class ProductsController {
-    constructor(ProductsService) {
+    constructor($stateParams, ProductsService) {
       this.productsService = ProductsService;
+      this.$stateParams = $stateParams;
     }
 
     $onInit() {
-      this.page = 1;
-      this.selectedPage = 0;
+      this.page = parseInt(this.$stateParams.page, 10) || 1;
+      this.selectedPage = this.page - 1 || 0;
+      this.query = this.$stateParams.query || '';
       this._getProducts();
     }
 
@@ -43,10 +45,6 @@
     }
 
     _getProducts() {
-      let queries = {
-        page:this.page,
-        query:this.query
-      };
       let productsPromise = this._makePromise();
       productsPromise.then(data => {
         this.pages = this._getRange(data.headers('X-Total-Count'));
@@ -54,11 +52,20 @@
         if (this.products.length < 1) {
           this.page = 1;
           this.selectedPage = 0;
-          this._getProducts();
+          this._getProductsOnce();
         }
       });
-
     }
+
+      _getProductsOnce() {
+          let productsPromise = this._makePromise();
+          productsPromise.then(data => {
+              this.pages = this._getRange(data.headers('X-Total-Count'));
+              this.products = data.data;
+
+          });
+      }
+
   }
 
   angular

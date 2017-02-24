@@ -12,7 +12,7 @@
         .state({
           parent:'root',
           name: 'products',
-          url: '/products',
+          url: '/products/:page?query',
           views: {
             content: {
               template: `
@@ -22,6 +22,6 @@
           }
         });
 
-      $urlRouterProvider.otherwise('/products');
+      $urlRouterProvider.otherwise('/products/1');
     });
 }());

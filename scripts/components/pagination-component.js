@@ -7,7 +7,12 @@
 
   class paginationController {
 
+    constructor($state) {
+        this.$state = $state;
+    }
+
     selectPage(index) {
+      this.$state.go('products',{'page': index + 1}, {notify:false});
       this.onPageSelect({
         $event:
           {
@@ -39,7 +44,7 @@
                   <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                   <li class="ng-class:{active:$ctrl.isSelected($index)}" 
                       ng-repeat="item in $ctrl.pages track by $index">
-                    <a ng-click="$ctrl.selectPage($index)">{{ $index+1}}</a>
+                    <a  ng-click="$ctrl.selectPage($index)">{{ $index+1}}</a>
                    </li>
                   <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
                 </ul></div>`,
