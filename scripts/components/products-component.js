@@ -33,8 +33,11 @@
     }
 
     _getRange(n) {
-      let p = Math.floor(n / 6) + 1;
-      return new Array(p);
+      let p = Math.floor(n / 6);
+      let r = n < 6 ? 0 : n % 6;
+      let pages = p < 1 ? 1 : p;
+      let pages_rem = r > 0 ? pages + 1 : pages;
+      return new Array(pages_rem);
     }
 
     _makePromise() {

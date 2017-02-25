@@ -3,8 +3,13 @@
 
     class ProductSearch {
 
-        constructor($state) {
+        constructor($state, $stateParams) {
             this.$state = $state;
+            this.$stateParams = $stateParams;
+        }
+
+        $onInit() {
+            this.query = this.$stateParams.query || '';
         }
 
         onChange() {
