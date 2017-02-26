@@ -12,7 +12,10 @@
                     <nav class="blue lighten-3">
                       <div class="nav-wrapper">
                         <a class="brand-logo left">Sklep internetowy</a>
-                        <cart-dropdown></cart-dropdown>
+                        <ul class="right">
+                            <li><a ui-sref="products">VIEW PRODUCTS</a></li>
+                            <li><cart-dropdown></cart-dropdown></li>
+                        </ul>
                       </div>
                       
                     </nav>

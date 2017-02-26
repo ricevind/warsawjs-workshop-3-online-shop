@@ -76,3 +76,40 @@ product-add-to-cart input[type="text"] {
 .pagination a {
     cursor: pointer;
 }
+
+.discard {
+    float: right;
+    margin-top: -7px;
+}
+
+.collection.with-header .collection-header {
+    background-color: #ff4081 ;
+}
+
+.title {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.price {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.quantity {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
+
+.overallprice {
+    display: inline-block;
+    width: 20%;
+    text-align: left;
+    padding: 0 0 0 10px;
+}
